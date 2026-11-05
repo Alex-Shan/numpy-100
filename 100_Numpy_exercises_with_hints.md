@@ -1,50 +1,46 @@
 
 
 
-# 100 numpy exercises
+# NumPy 100 题
 
-This is a collection of exercises that have been collected in the numpy mailing list, on stack overflow
-and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
-and new users but also to provide a set of exercises for those who teach.
+本练习集汇集了来自 NumPy 邮件列表、Stack Overflow 和 NumPy 文档的练习题，旨在为新老用户提供便捷的参考，同时为教学提供一套练习材料。
 
+如果你发现错误，或认为某些题目有更好的解法，欢迎在 <https://github.com/rougier/numpy-100> 提交 issue。
+本文件由程序自动生成。如需通过程序更新题目、解答或提示，请参阅项目文档。
 
-If you find an error or think you've a better way to solve some of them, feel
-free to open an issue at <https://github.com/rougier/numpy-100>.
-File automatically generated. See the documentation to update questions/answers/hints programmatically.
-
-#### 1. Import the numpy package under the name `np` (★☆☆)
-`hint: import … as`
-#### 2. Print the numpy version and the configuration (★☆☆)
-`hint: np.__version__, np.show_config)`
-#### 3. Create a null vector of size 10 (★☆☆)
-`hint: np.zeros`
-#### 4. How to find the memory size of any array (★☆☆)
-`hint: size, itemsize`
-#### 5. How to get the documentation of the numpy add function from the command line? (★☆☆)
-`hint: np.info`
-#### 6. Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
-`hint: array[4]`
-#### 7. Create a vector with values ranging from 10 to 49 (★☆☆)
-`hint: arange`
-#### 8. Reverse a vector (first element becomes last) (★☆☆)
-`hint: array[::-1]`
-#### 9. Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆)
-`hint: reshape`
-#### 10. Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆)
-`hint: np.nonzero`
-#### 11. Create a 3x3 identity matrix (★☆☆)
-`hint: np.eye`
-#### 12. Create a 3x3x3 array with random values (★☆☆)
-`hint: np.random.random`
-#### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)
-`hint: min, max`
-#### 14. Create a random vector of size 30 and find the mean value (★☆☆)
-`hint: mean`
-#### 15. Create a 2d array with 1 on the border and 0 inside (★☆☆)
-`hint: array[1:-1, 1:-1]`
-#### 16. How to add a border (filled with 0's) around an existing array? (★☆☆)
-`hint: np.pad`
-#### 17. What is the result of the following expression? (★☆☆)
+#### 1. 以 `np` 为别名导入 NumPy 包 (★☆☆)
+`提示： import … as`
+#### 2. 打印 NumPy 的版本和配置信息 (★☆☆)
+`提示： np.__version__, np.show_config)`
+#### 3. 创建一个长度为 10 的全零向量 (★☆☆)
+`提示： np.zeros`
+#### 4. 如何计算任意数组占用的内存大小？ (★☆☆)
+`提示： size, itemsize`
+#### 5. 如何在命令行中查看 NumPy 的 add 函数文档？ (★☆☆)
+`提示： np.info`
+#### 6. 创建一个长度为 10 的向量，除第 5 个元素为 1 外，其余元素均为 0 (★☆☆)
+`提示： array[4]`
+#### 7. 创建一个值从 10 到 49 的向量 (★☆☆)
+`提示： arange`
+#### 8. 反转一个向量（使第一个元素变为最后一个） (★☆☆)
+`提示： array[::-1]`
+#### 9. 创建一个值从 0 到 8 的 3x3 矩阵 (★☆☆)
+`提示： reshape`
+#### 10. 找出 [1,2,0,0,4,0] 中非零元素的索引 (★☆☆)
+`提示： np.nonzero`
+#### 11. 创建一个 3x3 单位矩阵 (★☆☆)
+`提示： np.eye`
+#### 12. 创建一个包含随机值的 3x3x3 数组 (★☆☆)
+`提示： np.random.random`
+#### 13. 创建一个包含随机值的 10x10 数组，并找出其中的最小值和最大值 (★☆☆)
+`提示： min, max`
+#### 14. 创建一个长度为 30 的随机向量，并计算其均值 (★☆☆)
+`提示： mean`
+#### 15. 创建一个边界为 1、内部为 0 的二维数组 (★☆☆)
+`提示： array[1:-1, 1:-1]`
+#### 16. 如何在现有数组周围添加一圈用 0 填充的边界？ (★☆☆)
+`提示： np.pad`
+#### 17. 下列表达式的结果是什么？ (★☆☆)
 ```python
 0 * np.nan
 np.nan == np.nan
@@ -53,33 +49,33 @@ np.nan - np.nan
 np.nan in set([np.nan])
 0.3 == 3 * 0.1
 ```
-`hint: NaN = not a number, inf = infinity`
-#### 18. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★☆☆)
-`hint: np.diag`
-#### 19. Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)
-`hint: array[::2]`
-#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)
-`hint: np.unravel_index`
-#### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)
-`hint: np.tile`
-#### 22. Normalize a 5x5 random matrix (★☆☆)
-`hint: (x -mean)/std`
-#### 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★☆☆)
-`hint: np.dtype`
-#### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
-`hint:`
-#### 25. Given a 1D array, negate all elements which are between 3 and 8, in place. (★☆☆)
-`hint: >, <`
-#### 26. What is the output of the following script? (★☆☆)
+`提示： NaN = 非数值，inf = 无穷大`
+#### 18. 创建一个 5x5 矩阵，在主对角线正下方的对角线上依次填入 1、2、3、4 (★☆☆)
+`提示： np.diag`
+#### 19. 创建一个 8x8 矩阵，并将其填充为棋盘图案 (★☆☆)
+`提示： array[::2]`
+#### 20. 对于一个形状为 (6,7,8) 的数组，第 100 个元素的索引 (x,y,z) 是什么？ (★☆☆)
+`提示： np.unravel_index`
+#### 21. 使用 tile 函数创建一个棋盘图案的 8x8 矩阵 (★☆☆)
+`提示： np.tile`
+#### 22. 对一个 5x5 随机矩阵进行标准化 (★☆☆)
+`提示： (x -mean)/std`
+#### 23. 创建一个自定义 dtype，用四个无符号字节描述颜色（RGBA） (★☆☆)
+`提示： np.dtype`
+#### 24. 将一个 5x3 矩阵与一个 3x2 矩阵相乘（矩阵乘法） (★☆☆)
+`提示：`
+#### 25. 给定一个一维数组，将其中大于 3 且小于 8 的元素原地取负 (★☆☆)
+`提示： >, <`
+#### 26. 下列脚本的输出是什么？ (★☆☆)
 ```python
-# Author: Jake VanderPlas
+# 作者： Jake VanderPlas
 
 print(sum(range(5),-1))
 from numpy import *
 print(sum(range(5),-1))
 ```
-`hint: np.sum`
-#### 27. Consider an integer vector Z, which of these expressions are legal? (★☆☆)
+`提示： np.sum`
+#### 27. 对于一个整数向量 Z，下列表达式中哪些是合法的？ (★☆☆)
 ```python
 Z**Z
 2 << Z >> 2
@@ -88,163 +84,163 @@ Z <- Z
 Z/1/1
 Z<Z>Z
 ```
-`No hints provided...`
-#### 28. What are the result of the following expressions? (★☆☆)
+`暂无提示。`
+#### 28. 下列表达式的结果是什么？ (★☆☆)
 ```python
 np.array(0) / np.array(0)
 np.array(0) // np.array(0)
 np.array([np.nan]).astype(int).astype(float)
 ```
-`No hints provided...`
-#### 29. How to round away from zero a float array ? (★☆☆)
-`hint: np.uniform, np.copysign, np.ceil, np.abs, np.where`
-#### 30. How to find common values between two arrays? (★☆☆)
-`hint: np.intersect1d`
-#### 31. How to ignore all numpy warnings (not recommended)? (★☆☆)
-`hint: np.seterr, np.errstate`
-#### 32. Is the following expressions true? (★☆☆)
+`暂无提示。`
+#### 29. 如何将浮点数数组中的元素沿远离零的方向取整？ (★☆☆)
+`提示： np.uniform, np.copysign, np.ceil, np.abs, np.where`
+#### 30. 如何找出两个数组中的共同值？ (★☆☆)
+`提示： np.intersect1d`
+#### 31. 如何忽略 NumPy 的所有警告（不推荐）？ (★☆☆)
+`提示： np.seterr, np.errstate`
+#### 32. 下列表达式的结果是否为真？ (★☆☆)
 ```python
 np.sqrt(-1) == np.emath.sqrt(-1)
 ```
-`hint: imaginary number`
-#### 33. How to get the dates of yesterday, today and tomorrow? (★☆☆)
-`hint: np.datetime64, np.timedelta64`
-#### 34. How to get all the dates corresponding to the month of July 2016? (★★☆)
-`hint: np.arange(dtype=datetime64['D'])`
-#### 35. How to compute ((A+B)*(-A/2)) in place (without copy)? (★★☆)
-`hint: np.add(out=), np.negative(out=), np.multiply(out=), np.divide(out=)`
-#### 36. Extract the integer part of a random array of positive numbers using 4 different methods (★★☆)
-`hint: %, np.floor, astype, np.trunc`
-#### 37. Create a 5x5 matrix with row values ranging from 0 to 4 (★★☆)
-`hint: np.arange`
-#### 38. Consider a generator function that generates 10 integers and use it to build an array (★☆☆)
-`hint: np.fromiter`
-#### 39. Create a vector of size 10 with values ranging from 0 to 1, both excluded (★★☆)
-`hint: np.linspace`
-#### 40. Create a random vector of size 10 and sort it (★★☆)
-`hint: sort`
-#### 41. How to sum a small array faster than np.sum? (★★☆)
-`hint: np.add.reduce`
-#### 42. Consider two random arrays A and B, check if they are equal (★★☆)
-`hint: np.allclose, np.array_equal`
-#### 43. Make an array immutable (read-only) (★★☆)
-`hint: flags.writeable`
-#### 44. Consider a random 10x2 matrix representing cartesian coordinates, convert them to polar coordinates (★★☆)
-`hint: np.sqrt, np.arctan2`
-#### 45. Create random vector of size 10 and replace the maximum value by 0 (★★☆)
-`hint: argmax`
-#### 46. Create a structured array with `x` and `y` coordinates covering the [0,1]x[0,1] area (★★☆)
-`hint: np.meshgrid`
-#### 47. Given two arrays, X and Y, construct the Cauchy matrix C (Cij =1/(xi - yj)) (★★☆)
-`hint: np.subtract.outer`
-#### 48. Print the minimum and maximum representable values for each numpy scalar type (★★☆)
-`hint: np.iinfo, np.finfo, eps`
-#### 49. How to print all the values of an array? (★★☆)
-`hint: np.set_printoptions`
-#### 50. How to find the closest value (to a given scalar) in a vector? (★★☆)
-`hint: argmin`
-#### 51. Create a structured array representing a position (x,y) and a color (r,g,b) (★★☆)
-`hint: dtype`
-#### 52. Consider a random vector with shape (100,2) representing coordinates, find point by point distances (★★☆)
-`hint: np.atleast_2d, T, np.sqrt`
-#### 53. How to convert a float (32 bits) array into an integer (32 bits) array in place?
-`hint: view and [:] =`
-#### 54. How to read the following file? (★★☆)
+`提示：虚数`
+#### 33. 如何获取昨天、今天和明天的日期？ (★☆☆)
+`提示： np.datetime64, np.timedelta64`
+#### 34. 如何获取 2016 年 7 月的所有日期？ (★★☆)
+`提示： np.arange(dtype=datetime64['D'])`
+#### 35. 如何原地计算 ((A+B)*(-A/2))（不创建副本）？ (★★☆)
+`提示： np.add(out=), np.negative(out=), np.multiply(out=), np.divide(out=)`
+#### 36. 使用 4 种不同的方法提取一个随机正数数组的整数部分 (★★☆)
+`提示： %, np.floor, astype, np.trunc`
+#### 37. 创建一个 5x5 矩阵，使每一行的值均从 0 到 4 (★★☆)
+`提示： np.arange`
+#### 38. 使用一个生成 10 个整数的生成器函数来构建数组 (★☆☆)
+`提示： np.fromiter`
+#### 39. 创建一个长度为 10、值介于 0 和 1 之间的向量，不包含两个端点 (★★☆)
+`提示： np.linspace`
+#### 40. 创建一个长度为 10 的随机向量，并对其排序 (★★☆)
+`提示： sort`
+#### 41. 如何以比 np.sum 更快的方式对小数组求和？ (★★☆)
+`提示： np.add.reduce`
+#### 42. 给定两个随机数组 A 和 B，检查它们是否相等 (★★☆)
+`提示： np.allclose, np.array_equal`
+#### 43. 将一个数组设为不可修改（只读） (★★☆)
+`提示： flags.writeable`
+#### 44. 给定一个表示笛卡尔坐标的随机 10x2 矩阵，将其转换为极坐标 (★★☆)
+`提示： np.sqrt, np.arctan2`
+#### 45. 创建一个长度为 10 的随机向量，并将最大值替换为 0 (★★☆)
+`提示： argmax`
+#### 46. 创建一个结构化数组，其 `x` 和 `y` 坐标覆盖 [0,1]x[0,1] 区域 (★★☆)
+`提示： np.meshgrid`
+#### 47. 给定两个数组 X 和 Y，构造柯西矩阵 C（Cij =1/(xi - yj)） (★★☆)
+`提示： np.subtract.outer`
+#### 48. 打印 NumPy 各种标量类型可表示的最小值和最大值 (★★☆)
+`提示： np.iinfo, np.finfo, eps`
+#### 49. 如何打印数组中的所有值？ (★★☆)
+`提示： np.set_printoptions`
+#### 50. 如何在向量中找出最接近给定标量的值？ (★★☆)
+`提示： argmin`
+#### 51. 创建一个表示位置 (x,y) 和颜色 (r,g,b) 的结构化数组 (★★☆)
+`提示： dtype`
+#### 52. 给定一个形状为 (100,2)、表示坐标的随机数组，计算各点之间的两两距离 (★★☆)
+`提示： np.atleast_2d, T, np.sqrt`
+#### 53. 如何将一个 32 位浮点数数组原地转换为 32 位整数数组？
+`提示：view 和 [:] =`
+#### 54. 如何读取下列文件？ (★★☆)
 ```
 1, 2, 3, 4, 5
 6,  ,  , 7, 8
  ,  , 9,10,11
 ```
-`hint: np.genfromtxt`
-#### 55. What is the equivalent of enumerate for numpy arrays? (★★☆)
-`hint: np.ndenumerate, np.ndindex`
-#### 56. Generate a generic 2D Gaussian-like array (★★☆)
-`hint: np.meshgrid, np.exp`
-#### 57. How to randomly place p elements in a 2D array? (★★☆)
-`hint: np.put, np.random.choice`
-#### 58. Subtract the mean of each row of a matrix (★★☆)
-`hint: mean(axis=,keepdims=)`
-#### 59. How to sort an array by the nth column? (★★☆)
-`hint: argsort`
-#### 60. How to tell if a given 2D array has null columns? (★★☆)
-`hint: any, ~`
-#### 61. Find the nearest value from a given value in an array (★★☆)
-`hint: np.abs, argmin, flat`
-#### 62. Considering two arrays with shape (1,3) and (3,1), how to compute their sum using an iterator? (★★☆)
-`hint: np.nditer`
-#### 63. Create an array class that has a name attribute (★★☆)
-`hint: class method`
-#### 64. Consider a given vector, how to add 1 to each element indexed by a second vector (be careful with repeated indices)? (★★★)
-`hint: np.bincount | np.add.at`
-#### 65. How to accumulate elements of a vector (X) to an array (F) based on an index list (I)? (★★★)
-`hint: np.bincount`
-#### 66. Considering a (w,h,3) image of (dtype=ubyte), compute the number of unique colors (★★☆)
-`hint: np.unique`
-#### 67. Considering a four dimensions array, how to get sum over the last two axis at once? (★★★)
-`hint: sum(axis=(-2,-1))`
-#### 68. Considering a one-dimensional vector D, how to compute means of subsets of D using a vector S of same size describing subset  indices? (★★★)
-`hint: np.bincount`
-#### 69. How to get the diagonal of a dot product? (★★★)
-`hint: np.diag`
-#### 70. Consider the vector [1, 2, 3, 4, 5], how to build a new vector with 3 consecutive zeros interleaved between each value? (★★★)
-`hint: array[::4]`
-#### 71. Consider an array of dimension (5,5,3), how to multiply it by an array with dimensions (5,5)? (★★★)
-`hint: array[:, :, None]`
-#### 72. How to swap two rows of an array? (★★★)
-`hint: array[[]] = array[[]]`
-#### 73. Consider a set of 10 triplets describing 10 triangles (with shared vertices), find the set of unique line segments composing all the  triangles (★★★)
-`hint: repeat, np.roll, np.sort, view, np.unique`
-#### 74. Given a sorted array C that corresponds to a bincount, how to produce an array A such that np.bincount(A) == C? (★★★)
-`hint: np.repeat`
-#### 75. How to compute averages using a sliding window over an array? (★★★)
-`hint: np.cumsum, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
-#### 76. Consider a one-dimensional array Z, build a two-dimensional array whose first row is (Z[0],Z[1],Z[2]) and each subsequent row is  shifted by 1 (last row should be (Z[-3],Z[-2],Z[-1]) (★★★)
-`hint: from numpy.lib import stride_tricks, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
-#### 77. How to negate a boolean, or to change the sign of a float inplace? (★★★)
-`hint: np.logical_not, np.negative`
-#### 78. Consider 2 sets of points P0,P1 describing lines (2d) and a point p, how to compute distance from p to each line i (P0[i],P1[i])? (★★★)
-`No hints provided...`
-#### 79. Consider 2 sets of points P0,P1 describing lines (2d) and a set of points P, how to compute distance from each point j (P[j]) to each line i (P0[i],P1[i])? (★★★)
-`No hints provided...`
-#### 80. Consider an arbitrary array, write a function that extracts a subpart with a fixed shape and centered on a given element (pad with a `fill` value when necessary) (★★★)
-`hint: minimum maximum`
-#### 81. Consider an array Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14], how to generate an array R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]? (★★★)
-`hint: stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
-#### 82. Compute a matrix rank (★★★)
-`hint: np.linalg.svd, np.linalg.matrix_rank`
-#### 83. How to find the most frequent value in an array?
-`hint: np.bincount, argmax`
-#### 84. Extract all the contiguous 3x3 blocks from a random 10x10 matrix (★★★)
-`hint: stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
-#### 85. Create a 2D array subclass such that Z[i,j] == Z[j,i] (★★★)
-`hint: class method`
-#### 86. Consider a set of p matrices with shape (n,n) and a set of p vectors with shape (n,1). How to compute the sum of of the p matrix products at once? (result has shape (n,1)) (★★★)
-`hint: np.tensordot`
-#### 87. Consider a 16x16 array, how to get the block-sum (block size is 4x4)? (★★★)
-`hint: np.add.reduceat, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
-#### 88. How to implement the Game of Life using numpy arrays? (★★★)
-`No hints provided...`
-#### 89. How to get the n largest values of an array (★★★)
-`hint: np.argsort | np.argpartition`
-#### 90. Given an arbitrary number of vectors, build the cartesian product (every combination of every item) (★★★)
-`hint: np.indices`
-#### 91. How to create a record array from a regular array? (★★★)
-`hint: np.core.records.fromarrays`
-#### 92. Consider a large vector Z, compute Z to the power of 3 using 3 different methods (★★★)
-`hint: np.power, *, np.einsum`
-#### 93. Consider two arrays A and B of shape (8,3) and (2,2). How to find rows of A that contain at least one element of each row of B regardless of the order of the elements in B?
-`hint: np.where`
-#### 94. Considering a 10x3 matrix, extract rows with unequal values (e.g. [2,2,3]) (★★★)
-`No hints provided...`
-#### 95. Convert a vector of ints into a matrix binary representation (★★★)
-`hint: np.unpackbits`
-#### 96. Given a two dimensional array, how to extract unique rows? (★★★)
-`hint: np.ascontiguousarray | np.unique`
-#### 97. Considering 2 vectors A & B, write the einsum equivalent of inner, outer, sum, and mul function (★★★)
-`hint: np.einsum`
-#### 98. Considering a path described by two vectors (X,Y), how to sample it using equidistant samples (★★★)?
-`hint: np.cumsum, np.interp`
-#### 99. Given an integer n and a 2D array X, select from X the rows which can be interpreted as draws from a multinomial distribution with n degrees, i.e., the rows which only contain integers and which sum to n. (★★★)
-`hint: np.logical_and.reduce, np.mod`
-#### 100. Compute bootstrapped 95% confidence intervals for the mean of a 1D array X (i.e., resample the elements of an array with replacement N times, compute the mean of each sample, and then compute percentiles over the means). (★★★)
-`hint: np.percentile`
+`提示： np.genfromtxt`
+#### 55. 对于 NumPy 数组，什么方法相当于 enumerate？ (★★☆)
+`提示： np.ndenumerate, np.ndindex`
+#### 56. 生成一个通用的二维类高斯数组 (★★☆)
+`提示： np.meshgrid, np.exp`
+#### 57. 如何在二维数组中随机放置 p 个元素？ (★★☆)
+`提示： np.put, np.random.choice`
+#### 58. 将矩阵每一行的元素减去该行的均值 (★★☆)
+`提示： mean(axis=,keepdims=)`
+#### 59. 如何按第 n 列对数组进行排序？ (★★☆)
+`提示： argsort`
+#### 60. 如何判断给定的二维数组中是否存在空值列？ (★★☆)
+`提示： any, ~`
+#### 61. 在数组中找出最接近给定值的值 (★★☆)
+`提示： np.abs, argmin, flat`
+#### 62. 给定两个形状分别为 (1,3) 和 (3,1) 的数组，如何使用迭代器计算它们的和？ (★★☆)
+`提示： np.nditer`
+#### 63. 创建一个具有 name 属性的数组类 (★★☆)
+`提示：类方法`
+#### 64. 给定一个向量，如何将第二个向量所指定索引处的元素各加 1（注意重复索引）？ (★★★)
+`提示： np.bincount | np.add.at`
+#### 65. 如何根据索引列表 (I)，将向量 (X) 中的元素累加到数组 (F) 中？ (★★★)
+`提示： np.bincount`
+#### 66. 给定一个形状为 (w,h,3)、数据类型为 ubyte 的图像，计算其中不同颜色的数量 (★★☆)
+`提示： np.unique`
+#### 67. 给定一个四维数组，如何一次性沿最后两个轴求和？ (★★★)
+`提示： sum(axis=(-2,-1))`
+#### 68. 给定一个一维向量 D，以及一个长度相同、表示各元素所属子集索引的向量 S，如何计算 D 中各子集的均值？ (★★★)
+`提示： np.bincount`
+#### 69. 如何获取矩阵乘积的对角线元素？ (★★★)
+`提示： np.diag`
+#### 70. 给定向量 [1, 2, 3, 4, 5]，如何构建一个新向量，在每两个相邻值之间插入 3 个连续的零？ (★★★)
+`提示： array[::4]`
+#### 71. 给定一个形状为 (5,5,3) 的数组，如何将其与一个形状为 (5,5) 的数组相乘？ (★★★)
+`提示： array[:, :, None]`
+#### 72. 如何交换数组中的两行？ (★★★)
+`提示： array[[]] = array[[]]`
+#### 73. 给定 10 个三元组，分别描述 10 个三角形（顶点可以共享），找出构成这些三角形的所有不重复线段 (★★★)
+`提示： repeat, np.roll, np.sort, view, np.unique`
+#### 74. 给定一个对应于 bincount 结果的有序数组 C，如何生成数组 A，使得 np.bincount(A) == C？ (★★★)
+`提示： np.repeat`
+#### 75. 如何使用滑动窗口计算数组的移动平均值？ (★★★)
+`提示： np.cumsum, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
+#### 76. 给定一个一维数组 Z，构建一个二维数组，其第一行为 (Z[0],Z[1],Z[2])，后续每一行向后移动一个元素，最后一行为 (Z[-3],Z[-2],Z[-1]) (★★★)
+`提示： from numpy.lib import stride_tricks, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
+#### 77. 如何原地对布尔值取反，或对浮点数取负？ (★★★)
+`提示： np.logical_not, np.negative`
+#### 78. 给定两组点 P0、P1 来描述二维平面中的直线，以及一个点 p，如何计算 p 到每条直线 i（P0[i],P1[i]）的距离？ (★★★)
+`暂无提示。`
+#### 79. 给定两组点 P0、P1 来描述二维平面中的直线，以及一组点 P，如何计算每个点 j（P[j]）到每条直线 i（P0[i],P1[i]）的距离？ (★★★)
+`暂无提示。`
+#### 80. 给定任意数组，编写一个函数，以指定元素为中心提取固定形状的子数组（必要时用 `fill` 值填充） (★★★)
+`提示： minimum maximum`
+#### 81. 给定数组 Z = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]，如何生成数组 R = [[1,2,3,4], [2,3,4,5], [3,4,5,6], ..., [11,12,13,14]]？ (★★★)
+`提示： stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
+#### 82. 计算矩阵的秩 (★★★)
+`提示： np.linalg.svd, np.linalg.matrix_rank`
+#### 83. 如何找出数组中出现次数最多的值？
+`提示： np.bincount, argmax`
+#### 84. 从一个随机的 10x10 矩阵中提取所有连续的 3x3 子块 (★★★)
+`提示： stride_tricks.as_strided, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
+#### 85. 创建一个二维数组子类，使其满足 Z[i,j] == Z[j,i] (★★★)
+`提示：类方法`
+#### 86. 给定 p 个形状为 (n,n) 的矩阵和 p 个形状为 (n,1) 的向量，如何一次性计算这 p 组矩阵与向量乘积的总和（结果形状为 (n,1)）？ (★★★)
+`提示： np.tensordot`
+#### 87. 给定一个 16x16 数组，如何对每个 4x4 子块分别求和？ (★★★)
+`提示： np.add.reduceat, from numpy.lib.stride_tricks import sliding_window_view (np>=1.20.0)`
+#### 88. 如何使用 NumPy 数组实现生命游戏？ (★★★)
+`暂无提示。`
+#### 89. 如何获取数组中最大的 n 个值？ (★★★)
+`提示： np.argsort | np.argpartition`
+#### 90. 给定任意数量的向量，构建它们的笛卡尔积（各向量元素的所有组合） (★★★)
+`提示： np.indices`
+#### 91. 如何从普通数组创建记录数组？ (★★★)
+`提示： np.core.records.fromarrays`
+#### 92. 给定一个大向量 Z，使用 3 种不同的方法计算 Z 的三次方 (★★★)
+`提示： np.power, *, np.einsum`
+#### 93. 给定两个形状分别为 (8,3) 和 (2,2) 的数组 A 和 B，如何找出 A 中这样的行：对于 B 的每一行，该行都至少包含其中的一个元素，且不考虑 B 中元素的顺序？
+`提示： np.where`
+#### 94. 给定一个 10x3 矩阵，提取元素不全相等的行（例如 [2,2,3]） (★★★)
+`暂无提示。`
+#### 95. 将一个整数向量转换为二进制表示矩阵 (★★★)
+`提示： np.unpackbits`
+#### 96. 给定一个二维数组，如何提取其中不重复的行？ (★★★)
+`提示： np.ascontiguousarray | np.unique`
+#### 97. 给定两个向量 A 和 B，使用 einsum 写出与 inner、outer、sum 和 mul 函数等价的表达式 (★★★)
+`提示： np.einsum`
+#### 98. 给定由两个向量 (X,Y) 描述的路径，如何沿路径进行等距采样？ (★★★)
+`提示： np.cumsum, np.interp`
+#### 99. 给定一个整数 n 和一个二维数组 X，从 X 中选出可视为 n 次试验的多项分布抽样结果的行，即仅包含整数且元素之和为 n 的行 (★★★)
+`提示： np.logical_and.reduce, np.mod`
+#### 100. 计算一维数组 X 的均值的 95% 自助法置信区间（即对数组元素进行 N 次有放回重采样，计算每次样本的均值，然后计算这些均值的百分位数） (★★★)
+`提示： np.percentile`
